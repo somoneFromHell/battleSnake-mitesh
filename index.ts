@@ -23,8 +23,8 @@ function info(): InfoResponse {
     apiversion: "1",
     author: "mitesh_maurya",       // TODO: Your Battlesnake Username
     color: "#c7ff33", // TODO: Choose color
-    head: "all-seeing",  // TODO: Choose head
-    tail: "fat-rattle",  // TODO: Choose tail
+    head: "sand-worm",  // TODO: Choose head
+    tail: "mlh-gene",  // TODO: Choose tail
   };
 }
 
@@ -71,10 +71,12 @@ function move(gameState: GameState): MoveResponse {
   const boardWidth = gameState.board.width;
   const boardHight = gameState.board.height;
   if(<number>myHead.x == boardWidth-1 || <number>myHead.x == 1){
-    return { move: "left" }
+    isMoveSafe.right = false;
+    isMoveSafe.left = false;
   }
-  if(<number>myHead.y == boardHight-1 || <number>myHead.x == 1){
-    return { move: "left" }
+  else if(<number>myHead.y == boardHight-1 || <number>myHead.y == 1){
+    isMoveSafe.down = false;
+    isMoveSafe.down = false;
   }
 
   // boardHeight = gameState.board.height;
