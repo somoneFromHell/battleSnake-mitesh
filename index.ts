@@ -91,6 +91,7 @@ function move(gameState: GameState): MoveResponse {
   const safeMoves = Object.keys(isMoveSafe).filter(key => isMoveSafe[key]);
   if (safeMoves.length == 0) {
     console.log(`MOVE ${gameState.turn}: No safe moves detected! Moving down`);
+    console.log(`SAFE MOVE ${safeMoves}`);
     return { move: "down" };
   }
 
