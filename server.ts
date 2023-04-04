@@ -12,6 +12,7 @@ export default function runServer(handlers: BattlesnakeHandlers) {
   app.use(express.json());
 
   app.get("/", (req: Request, res: Response) => {
+    console.log(res)
     res.send(handlers.info());
   });
 
